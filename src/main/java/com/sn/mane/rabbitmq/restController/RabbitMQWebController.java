@@ -15,7 +15,6 @@ public class RabbitMQWebController {
 
     @PostMapping("/producer")
     public String producer(@RequestBody Person person) {
-        Person person1 = new Person();
         rabbitMQSender.send(person);
         return "Message sent to the RabbitMQ Successfully";
     }
